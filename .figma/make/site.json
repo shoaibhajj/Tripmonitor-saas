@@ -1,0 +1,10 @@
+{
+  "description": "This GPS tracking platform offers real-time location tracking with an engaging user interface, enhancing user experience through dynamic map interactions and sophisticated design.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
