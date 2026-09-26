@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@import 'mapbox-gl/dist/mapbox-gl.css';
+@import 'tailwindcss';
+
+/*
+ * ─────────────────────────────────────────────────────────────
+ * DESIGN TOKENS
+ * ─────────────────────────────────────────────────────────────
+ * One shared token set for the whole app (marketing site, auth
+ * pages, and the map dashboard). `:root` holds the light values,
+ * `.dark` overrides them — toggled on <html> by ThemeContext.
+ *
+ * The dashboard was built on semantic names (--background,
+ * --foreground, --card, ...). The marketing site was built on
+ * its own brand-flavoured names (--color-ground, --color-neon,
+ * ...). Rather than picking one and rewriting the other, the
+ * --color-* tokens below are aliased to the semantic tokens, so
+ * both vocabularies stay valid but only ONE set of raw values
+ * (defined once, here) ever needs to change between themes.
+ *
+ * Adding a new token? Add the light value to :root and the dark
+ * value to .dark — see docs/GUIDE.md → "Theming".
+ * ─────────────────────────────────────────────────────────────
+ */
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Register the marketing palette with Tailwind so classes such as
+   bg-ground, text-neon, and border-edge are generated. `inline` keeps
+   aliases responsive to the semantic variables overridden by `.dark`. */
+@theme inline {
+  --color-ground: var(--background);
+  --color-surface: var(--card);
+  --color-surface2: var(--secondary);
+  --color-edge: var(--border);
+  --color-neon: var(--primary);
+  --color-neon-dim: var(--primary-light);
+  --color-leaf: #1a6b3a;
+  --color-text: var(--foreground);
+  --color-muted: var(--muted-foreground);
+  --color-amber: #f59e0b;
+  --color-red: #ef4444;
+}
+
+:root {
+  /* Semantic surface tokens — light */
+  --background: #f8fafb;
+  --foreground: #0f1923;
+  --card: #ffffff;
+  --card-foreground: #0f1923;
+  --primary: #16a34a;
+  --primary-light: #22c55e;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f4f8;
+  --secondary-foreground: #374151;
+  --muted: #e8edf2;
+  --muted-foreground: #6b7280;
+  --accent: #16a34a;
+  --accent-foreground: #ffffff;
+  --border: #e2e8f0;
+  --ring: #16a34a;
+  --radius: 10px;
+  --sidebar-width: 220px;
+  --sidebar-collapsed: 60px;
+  --topbar-height: 56px;
+}
+
+.dark {
+  --background: #050d08;
+  --foreground: #c8e6cc;
+  --card: #091410;
+  --card-foreground: #c8e6cc;
+  --primary: #00ff6e;
+  --primary-light: #00cc58;
+  --primary-foreground: #050d08;
+  --secondary: #0e1f16;
+  --secondary-foreground: #c8e6cc;
+  --muted: #142b1e;
+  --muted-foreground: #507a58;
+  --accent: #00ff6e;
+  --accent-foreground: #050d08;
+  --border: #142b1e;
+  --ring: #00ff6e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  /* No global overflow:hidden here on purpose — the marketing site and
+     auth pages need to scroll normally. The map dashboard (/app) sets
+     its own overflow:hidden on its own root element instead, so it
+     stays a fixed, non-scrolling viewport without affecting other
+     routes. See docs/GUIDE.md → "Why isn't overflow:hidden global". */
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Dashboard-style scrollbar: thin, subtle, shown by default everywhere. */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+
+/* Marketing-site style: scrollbar fully hidden, scoped to the marketing
+   & auth routes only (applied via the .marketing-scope wrapper class)
+   so it doesn't also hide the dashboard's scrollbars everywhere else. */
+.marketing-scope, .marketing-scope * { scrollbar-width: none; }
+.marketing-scope::-webkit-scrollbar,
+.marketing-scope *::-webkit-scrollbar { display: none; }
+
+/* Smooth transitions, app-wide */
+* { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+/*
+ * ─────────────────────────────────────────────────────────────
+ * MARKETING SITE — animation keyframes & range slider skin
+ * (from the original landing page; unchanged, no naming conflicts
+ * with anything the dashboard defines)
+ * ─────────────────────────────────────────────────────────────
+ */
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.15; }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scan {
+  0%   { transform: translateY(0);    opacity: 0.7; }
+  100% { transform: translateY(420px); opacity: 0; }
+}
+@keyframes dash-march {
+  to { stroke-dashoffset: -20; }
+}
+@keyframes zone-pulse {
+  0%, 100% { opacity: 0.18; r: 58; }
+  50%       { opacity: 0.35; r: 70; }
+}
+@keyframes slide-alert {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.85); }
+  70%  { transform: scale(1.04); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes count-tick {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+/* Range slider custom styles (ROI Calculator) */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  background: var(--color-edge);
+  height: 4px;
+  border-radius: 2px;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--color-neon);
+  margin-top: -8px;
+  box-shadow: 0 0 12px color-mix(in srgb, var(--color-neon) 40%, transparent);
+  transition: box-shadow 0.2s;
+}
+input[type=range]::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 24px color-mix(in srgb, var(--color-neon) 65%, transparent);
+}
+input[type=range]::-moz-range-track {
+  background: var(--color-edge); height: 4px; border-radius: 2px;
+}
+input[type=range]::-moz-range-thumb {
+  border: none; width: 20px; height: 20px; border-radius: 50%;
+  background: var(--color-neon); box-shadow: 0 0 12px color-mix(in srgb, var(--color-neon) 40%, transparent);
+}
