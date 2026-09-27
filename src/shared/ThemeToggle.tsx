@@ -63,19 +63,19 @@ const variantStyle: Record<NonNullable<Props['variant']>, React.CSSProperties> =
 }
 
 export default function ThemeToggle({ variant = 'pill', className = '' }: Props) {
-  const { darkMode, toggleDark } = useTheme()
+  const { isDark, toggleTheme } = useTheme()
   const { t } = useLanguage()
-  const label = darkMode ? t('light_mode') : t('dark_mode')
+  const label = isDark ? t("light_mode") : t("dark_mode");
 
   return (
     <button
-      onClick={toggleDark}
+      onClick={toggleTheme}
       title={label}
       aria-label={label}
       className={className}
       style={variantStyle[variant]}
     >
-      {darkMode ? sunIcon : moonIcon}
+      {isDark ? sunIcon : moonIcon}
     </button>
-  )
+  );
 }

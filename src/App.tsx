@@ -7,6 +7,8 @@ import LandingPage from './marketing/LandingPage'
 import Login from './auth/Login'
 import Signup from './auth/Signup'
 import MapDashboard from './app/components/MapDashboard'
+import VehiclesPage from './vehicles/components/VehiclesPage'
+import VehiclesLayoutPage from './vehicles/components/VehiclesLayoutPage'
 
 /**
  * App-wide route map. Providers wrap everything once, here, so any
@@ -23,6 +25,7 @@ export default function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<LandingPage />} />
+              <Route path="/vehicles" element={<VehiclesLayoutPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route
