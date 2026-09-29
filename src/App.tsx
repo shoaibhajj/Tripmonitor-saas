@@ -9,6 +9,7 @@ import Signup from './auth/Signup'
 import MapDashboard from './app/components/MapDashboard'
 import VehiclesPage from './vehicles/components/VehiclesPage'
 import VehiclesLayoutPage from './vehicles/components/VehiclesLayoutPage'
+import Dashboard from './dashboard/components/Dashboard'
 
 /**
  * App-wide route map. Providers wrap everything once, here, so any
@@ -36,6 +37,14 @@ export default function App() {
                   </ProtectedRoute>
                 }
               />
+              <Route
+  path="/app/dashboard"
+  element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+/>
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </BrowserRouter>
