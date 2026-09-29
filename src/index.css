@@ -39,33 +39,58 @@
   --color-ground: var(--background);
   --color-surface: var(--card);
   --color-surface2: var(--secondary);
+  --color-sidebar: var(--sidebar);
+  --color-popover: var(--popover);
   --color-edge: var(--border);
   --color-neon: var(--primary);
   --color-neon-dim: var(--primary-light);
-  --color-leaf: #1a6b3a;
+  --color-leaf: var(--primary-deep);
   --color-text: var(--foreground);
   --color-muted: var(--muted-foreground);
-  --color-amber: #f59e0b;
-  --color-red: #ef4444;
+  --color-amber: var(--warning);
+  --color-red: var(--danger);
+  --color-info: var(--info);
 }
 
+/*
+ * PALETTE — "Petroleum & Mint"
+ * Dark: deep petroleum blue (hue ≈ 190–197°) surfaces with a mint-green
+ * accent (hue ≈ 167°). Sampled from the approved dashboard mockups.
+ * Light: the same petroleum hue, lifted into a LADDER of tinted whites —
+ * canvas → sidebar → card → secondary → muted → popover — so surfaces
+ * separate from each other instead of everything being one flat #fff.
+ * Only floating layers (popover) are pure white.
+ */
 :root {
-  /* Semantic surface tokens — light */
-  --background: #f8fafb;
-  --foreground: #0f1923;
-  --card: #ffffff;
-  --card-foreground: #0f1923;
-  --primary: #16a34a;
-  --primary-light: #22c55e;
+  /* Surfaces — light (darkest → lightest reads as page → raised) */
+  --background: #dde8ec;          /* page canvas: petroleum-tinted mist */
+  --sidebar: #f0f5f7;             /* sidebar / topbar: one step lighter */
+  --card: #fafcfd;                /* cards & panels */
+  --card-foreground: #082631;
+  --popover: #ffffff;             /* menus, tooltips, dropdowns — the only pure white */
+  --secondary: #eaf1f4;           /* inputs, chips, hover fills, table stripes */
+  --secondary-foreground: #123644;
+  --muted: #d5e2e7;               /* tracks, skeletons, disabled fills */
+  --border: #c2d3da;
+
+  /* Text — light */
+  --foreground: #082631;          /* deep petroleum, not black */
+  --muted-foreground: #456473;
+
+  /* Brand — light (deeper mint so it holds 4.5:1 as text on cards) */
+  --primary: #007560;
+  --primary-light: #00a385;       /* gradient end / hover — lighter in light mode */
+  --primary-deep: #005a49;
   --primary-foreground: #ffffff;
-  --secondary: #f0f4f8;
-  --secondary-foreground: #374151;
-  --muted: #e8edf2;
-  --muted-foreground: #6b7280;
-  --accent: #16a34a;
+  --accent: #007560;
   --accent-foreground: #ffffff;
-  --border: #e2e8f0;
-  --ring: #16a34a;
+  --ring: #00a385;
+
+  /* Status — light (darkened for legibility on tinted whites) */
+  --warning: #9a5200;
+  --danger: #c42828;
+  --info: #165fbb;
+
   --radius: 10px;
   --sidebar-width: 220px;
   --sidebar-collapsed: 60px;
@@ -73,21 +98,34 @@
 }
 
 .dark {
-  --background: #050d08;
-  --foreground: #c8e6cc;
-  --card: #091410;
-  --card-foreground: #c8e6cc;
-  --primary: #00ff6e;
-  --primary-light: #00cc58;
-  --primary-foreground: #050d08;
-  --secondary: #0e1f16;
-  --secondary-foreground: #c8e6cc;
-  --muted: #142b1e;
-  --muted-foreground: #507a58;
-  --accent: #00ff6e;
-  --accent-foreground: #050d08;
-  --border: #142b1e;
-  --ring: #00ff6e;
+  /* Surfaces — dark petroleum */
+  --background: #041319;          /* page canvas */
+  --sidebar: #020e12;             /* deepest layer: sidebar / topbar */
+  --card: #08181e;                /* cards & panels */
+  --card-foreground: #e6f0f3;
+  --popover: #0d2229;             /* menus, tooltips, dropdowns */
+  --secondary: #0d2229;           /* inputs, chips, hover fills */
+  --secondary-foreground: #e6f0f3;
+  --muted: #143038;
+  --border: #153139;
+
+  /* Text — dark */
+  --foreground: #e6f0f3;
+  --muted-foreground: #86a3ad;
+
+  /* Brand — dark: mint green */
+  --primary: #00e8b4;
+  --primary-light: #00b58c;       /* "dim" variant (gradient end, pressed) */
+  --primary-deep: #007a62;
+  --primary-foreground: #021216;
+  --accent: #00e8b4;
+  --accent-foreground: #021216;
+  --ring: #00e8b4;
+
+  /* Status — dark */
+  --warning: #fab64e;
+  --danger: #fe4c4b;
+  --info: #369afe;
 }
 
 * {

@@ -30,7 +30,7 @@ export default function SpeedGauge({ speed, maxSpeed = 120, size = 130 }: Props)
   // (the arc spans 0–180°, so the short clockwise path never exceeds 180°)
   const fillArc = `M ${startX} ${startY} A ${R} ${R} 0 0 1 ${fx.toFixed(3)} ${fy.toFixed(3)}`
 
-  const fillColor = ratio < 1/3 ? '#16a34a' : ratio < 2/3 ? '#f59e0b' : '#ef4444'
+  const fillColor = ratio < 1/3 ? '#00a385' : ratio < 2/3 ? '#f59e0b' : '#ef4444'
 
   const ticks = [0, 30, 60, 90, 120]
   const labelR = R - sw * 2.5

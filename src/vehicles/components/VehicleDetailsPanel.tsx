@@ -33,30 +33,30 @@ function MapPreview() {
         <circle cx="218" cy="68" r="3" fill="#162848"/>
         {/* GPS trail - past path, dashed */}
         <path d="M40,148 L60,128 L78,110 L95,98 L112,88 L135,78 L150,72"
-              stroke="#00ff6e" strokeWidth="2" fill="none" strokeDasharray="5,3" opacity="0.5"/>
+              stroke="#00e8b4" strokeWidth="2" fill="none" strokeDasharray="5,3" opacity="0.5"/>
         {/* GPS trail - recent path, solid */}
         <path d="M150,72 L165,66 L182,60 L198,55"
-              stroke="#00ff6e" strokeWidth="2.5" fill="none"/>
+              stroke="#00e8b4" strokeWidth="2.5" fill="none"/>
         {/* Glow effect on trail */}
         <path d="M150,72 L165,66 L182,60 L198,55"
-              stroke="#00ff6e" strokeWidth="8" fill="none" opacity="0.1"/>
+              stroke="#00e8b4" strokeWidth="8" fill="none" opacity="0.1"/>
         {/* Past waypoints */}
-        <circle cx="78" cy="110" r="3" fill="#2a7a4a"/>
-        <circle cx="112" cy="88" r="3" fill="#2a7a4a"/>
-        <circle cx="150" cy="72" r="3" fill="#2a7a4a"/>
+        <circle cx="78" cy="110" r="3" fill="#1d6b62"/>
+        <circle cx="112" cy="88" r="3" fill="#1d6b62"/>
+        <circle cx="150" cy="72" r="3" fill="#1d6b62"/>
         {/* Vehicle position - pulsing */}
-        <circle cx="198" cy="55" r="12" fill="#00ff6e" opacity="0.15"/>
-        <circle cx="198" cy="55" r="7"  fill="#00ff6e" opacity="0.3"/>
-        <circle cx="198" cy="55" r="5"  fill="#00ff6e"/>
-        <circle cx="198" cy="55" r="2.5" fill="#050d08"/>
+        <circle cx="198" cy="55" r="12" fill="#00e8b4" opacity="0.15"/>
+        <circle cx="198" cy="55" r="7"  fill="#00e8b4" opacity="0.3"/>
+        <circle cx="198" cy="55" r="5"  fill="#00e8b4"/>
+        <circle cx="198" cy="55" r="2.5" fill="#041319"/>
         {/* مباشر badge */}
-        <rect x="220" y="8" width="68" height="20" rx="10" fill="#00ff6e"/>
-        <text x="254" y="22" textAnchor="middle" fill="#050d08" fontSize="9" fontWeight="700" fontFamily="system-ui">مباشر</text>
+        <rect x="220" y="8" width="68" height="20" rx="10" fill="#00e8b4"/>
+        <text x="254" y="22" textAnchor="middle" fill="#041319" fontSize="9" fontWeight="700" fontFamily="system-ui">مباشر</text>
         {/* Origin marker */}
-        <rect x="36" y="140" width="8" height="8" rx="1" fill="#507a58"/>
-        <rect x="38" y="132" width="4" height="10" fill="#507a58"/>
-        <circle cx="40" cy="130" r="5" fill="#507a58"/>
-        <circle cx="40" cy="130" r="2.5" fill="#050d08"/>
+        <rect x="36" y="140" width="8" height="8" rx="1" fill="#86a3ad"/>
+        <rect x="38" y="132" width="4" height="10" fill="#86a3ad"/>
+        <circle cx="40" cy="130" r="5" fill="#86a3ad"/>
+        <circle cx="40" cy="130" r="2.5" fill="#041319"/>
       </svg>
 
       {/* Overlay controls */}

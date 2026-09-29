@@ -17,8 +17,8 @@ interface Props {
 const toneColor: Record<StatTone, string> = {
   solid: "var(--primary-foreground)",
   moving: "var(--primary)",
-  stopped: "#f59e0b",
-  attention: "#ef4444",
+  stopped: "var(--warning)",
+  attention: "var(--danger)",
 }
 
 function Sparkline({
@@ -83,7 +83,7 @@ export default function StatCard({
     ? isSolid
       ? "var(--primary-foreground)"
       : "var(--primary)"
-    : "#ef4444"
+    : "var(--danger)"
   const arrow = trendPercent >= 0 ? "↑" : "↓"
 
   return (
@@ -99,7 +99,7 @@ export default function StatCard({
         background: isSolid
           ? "linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%)"
           : tone === "attention"
-            ? "color-mix(in srgb, #ef4444 8%, var(--card))"
+            ? "color-mix(in srgb, var(--danger) 8%, var(--card))"
             : "var(--card)",
         border: isSolid ? "none" : "1px solid var(--border)",
       }}

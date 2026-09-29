@@ -27,8 +27,8 @@ function PickupSVG() {
       <rect x="174" y="50" width="4" height="3" rx="1" fill="#708090" opacity="0.5"/>
       <rect x="174" y="55" width="4" height="3" rx="1" fill="#708090" opacity="0.5"/>
       {/* Wheel arches */}
-      <circle cx="40"  cy="68" r="18" fill="#050d08"/>
-      <circle cx="152" cy="68" r="18" fill="#050d08"/>
+      <circle cx="40"  cy="68" r="18" fill="#041319"/>
+      <circle cx="152" cy="68" r="18" fill="#041319"/>
       {/* Rear wheel */}
       <circle cx="40" cy="68" r="14" fill="#1c2530"/>
       <circle cx="40" cy="68" r="8"  fill="#28323e"/>
@@ -73,8 +73,8 @@ function SedanSVG() {
       {/* Side mirror */}
       <rect x="153" y="36" width="7" height="4" rx="1" fill="#c0ccd8"/>
       {/* Wheel arches */}
-      <circle cx="44"  cy="72" r="17" fill="#050d08"/>
-      <circle cx="152" cy="72" r="17" fill="#050d08"/>
+      <circle cx="44"  cy="72" r="17" fill="#041319"/>
+      <circle cx="152" cy="72" r="17" fill="#041319"/>
       {/* Rear wheel */}
       <circle cx="44"  cy="72" r="13" fill="#1c2530"/>
       <circle cx="44"  cy="72" r="7.5" fill="#28323e"/>
@@ -115,8 +115,8 @@ function VanSVG() {
       <rect x="177" y="54" width="2" height="4" rx="0.5" fill="#7090a8" opacity="0.5"/>
       <rect x="177" y="60" width="2" height="4" rx="0.5" fill="#7090a8" opacity="0.5"/>
       {/* Wheel arches */}
-      <circle cx="38"  cy="72" r="16" fill="#050d08"/>
-      <circle cx="155" cy="72" r="16" fill="#050d08"/>
+      <circle cx="38"  cy="72" r="16" fill="#041319"/>
+      <circle cx="155" cy="72" r="16" fill="#041319"/>
       {/* Rear wheel */}
       <circle cx="38"  cy="72" r="12" fill="#1c2530"/>
       <circle cx="38"  cy="72" r="7"  fill="#28323e"/>
@@ -161,8 +161,8 @@ function SUVSVG() {
       {/* Side mirror */}
       <rect x="162" y="28" width="8" height="5" rx="1" fill="#b8c8d8"/>
       {/* Wheel arches */}
-      <circle cx="42"  cy="72" r="19" fill="#050d08"/>
-      <circle cx="158" cy="72" r="19" fill="#050d08"/>
+      <circle cx="42"  cy="72" r="19" fill="#041319"/>
+      <circle cx="158" cy="72" r="19" fill="#041319"/>
       {/* Rear wheel */}
       <circle cx="42"  cy="72" r="15" fill="#1c2530"/>
       <circle cx="42"  cy="72" r="9"  fill="#28323e"/>

@@ -31,7 +31,7 @@ const VEHICLE_ROUTES: Record<string, { out: [number, number][]; ret?: [number, n
 
 // ── Status colours ────────────────────────────────────────────────────────────
 const STATUS_COLOR: Record<VehicleStatus, string> = {
-  moving:  '#16a34a',
+  moving:  '#00a385',
   idle:    '#f59e0b',
   offline: '#6b7280',
 }
@@ -199,12 +199,12 @@ function ensureRouteLayers(map: mapboxgl.Map) {
     map.addLayer({
       id: `${SRC_OUT}-casing`, type: 'line', source: SRC_OUT,
       layout: { 'line-join': 'round', 'line-cap': 'round' },
-      paint: { 'line-color': '#052e16', 'line-width': 6, 'line-opacity': 0.4 },
+      paint: { 'line-color': '#04332c', 'line-width': 6, 'line-opacity': 0.4 },
     } as any)
     map.addLayer({
       id: `${SRC_OUT}-layer`, type: 'line', source: SRC_OUT,
       layout: { 'line-join': 'round', 'line-cap': 'round' },
-      paint: { 'line-color': '#16a34a', 'line-width': 3.5, 'line-opacity': 0.9 },
+      paint: { 'line-color': '#00a385', 'line-width': 3.5, 'line-opacity': 0.9 },
     } as any)
   }
   if (!map.getSource(SRC_RET)) {
@@ -255,7 +255,7 @@ function Btn({ children, onClick, title, active = false, style: sx = {} }: {
     <button onClick={onClick} title={title} style={{
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       width: 36, height: 36, borderRadius: 9, border: 'none', cursor: 'pointer',
-      background: active ? 'var(--primary, #16a34a)' : 'rgba(255,255,255,0.94)',
+      background: active ? 'var(--primary, #00a385)' : 'rgba(255,255,255,0.94)',
       color: active ? '#fff' : '#1e293b',
       boxShadow: '0 2px 10px rgba(0,0,0,0.18)',
       backdropFilter: 'blur(10px)',
@@ -518,14 +518,14 @@ export default function MapCanvas({ vehicles, selectedVehicle, onVehicleSelect, 
           background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)',
           color: '#e2e8f0', fontFamily: 'inherit',
         }}>
-          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#00c9a0" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
             <line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>
           </svg>
           <div style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-0.02em' }}>Mapbox Token Required</div>
           <div style={{ fontSize: 13, color: '#94a3b8', textAlign: 'center', maxWidth: 400, lineHeight: 1.65 }}>
             Open{' '}
-            <code style={{ background: '#0f172a', borderRadius: 4, padding: '2px 7px', color: '#22c55e', fontFamily: 'monospace' }}>
+            <code style={{ background: '#0f172a', borderRadius: 4, padding: '2px 7px', color: '#00c9a0', fontFamily: 'monospace' }}>
               src/config/mapbox.ts
             </code>{' '}
             and replace the placeholder with your{' '}
@@ -561,8 +561,8 @@ export default function MapCanvas({ vehicles, selectedVehicle, onVehicleSelect, 
                   <button key={s} onClick={() => applyStyle(s)} style={{
                     display: 'flex', alignItems: 'center', gap: 8,
                     width: '100%', padding: '8px 12px', border: 'none', cursor: 'pointer',
-                    background: s === activeStyle ? 'rgba(22,163,74,0.1)' : 'transparent',
-                    color: s === activeStyle ? '#16a34a' : '#1e293b',
+                    background: s === activeStyle ? 'rgba(0,163,133,0.1)' : 'transparent',
+                    color: s === activeStyle ? '#00a385' : '#1e293b',
                     fontSize: 13, fontWeight: s === activeStyle ? 600 : 400, textAlign: 'left',
                   }}>
                     <span style={{ fontSize: 15 }}>

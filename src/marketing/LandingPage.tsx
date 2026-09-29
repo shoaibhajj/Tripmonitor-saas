@@ -95,7 +95,7 @@ function MapGridBg({ pid }: { pid: string }) {
           <path
             d="M 40 0 L 0 0 0 40"
             fill="none"
-            stroke="#0c2618"
+            stroke="#0c2a2c"
             strokeWidth="0.5"
           />
         </pattern>
@@ -114,14 +114,14 @@ function MapGridBg({ pid }: { pid: string }) {
           </feMerge>
         </filter>
       </defs>
-      <rect width="680" height="420" fill="#050d08" />
+      <rect width="680" height="420" fill="#041319" />
       <rect width="680" height="420" fill={`url(#g-${pid})`} />
       <ellipse
         cx="330"
         cy="260"
         rx="260"
         ry="115"
-        fill="#091f12"
+        fill="#0b2a2b"
         opacity="0.55"
       />
     </>
@@ -147,8 +147,8 @@ function CityNode({
 }) {
   const r = large ? 9 : 6;
   const ri = large ? 4 : 3;
-  const c = highlight ? "#00ff6e" : active ? "#00ff6e" : "#1a6b3a";
-  const sc = highlight ? "#00ff6e" : active ? "#00ff6e" : "#1a4d2e";
+  const c = highlight ? "#00e8b4" : active ? "#00e8b4" : "#0a6b5a";
+  const sc = highlight ? "#00e8b4" : active ? "#00e8b4" : "#1b4a4d";
   const opacity = dimmed ? 0.35 : 1;
 
   return (
@@ -161,7 +161,7 @@ function CityNode({
           cx={city.x}
           cy={city.y}
           r={r}
-          fill="#050d08"
+          fill="#041319"
           stroke={sc}
           strokeWidth={large ? 2.5 : 2}
         />
@@ -205,7 +205,7 @@ function CityNode({
         <text
           x={city.x + r + 4}
           y={city.y + 4}
-          fill="#507a58"
+          fill="#86a3ad"
           fontSize="9"
           fontFamily="JetBrains Mono, monospace"
         >
@@ -246,13 +246,13 @@ function HeroMap() {
       </defs>
       <MapGridBg pid={pid} />
       {routes.map((d, i) => (
-        <path key={i} d={d} stroke="#0d3d1f" strokeWidth="2.5" fill="none" />
+        <path key={i} d={d} stroke="#0a3a3a" strokeWidth="2.5" fill="none" />
       ))}
       {routes.map((d, i) => (
         <path
           key={i}
           d={d}
-          stroke="#00ff6e"
+          stroke="#00e8b4"
           strokeWidth="1.5"
           fill="none"
           filter={`url(#gf-${pid})`}
@@ -266,12 +266,12 @@ function HeroMap() {
       ))}
       {/* Vehicle 1 */}
       <g filter={`url(#gs-${pid})`}>
-        <circle r="5.5" fill="#00ff6e">
+        <circle r="5.5" fill="#00e8b4">
           <animateMotion dur="10s" repeatCount="indefinite">
             <mpath href={`#pa-${pid}`} />
           </animateMotion>
         </circle>
-        <circle r="13" fill="none" stroke="#00ff6e" strokeWidth="1">
+        <circle r="13" fill="none" stroke="#00e8b4" strokeWidth="1">
           <animateMotion dur="10s" repeatCount="indefinite">
             <mpath href={`#pa-${pid}`} />
           </animateMotion>
@@ -285,7 +285,7 @@ function HeroMap() {
       </g>
       {/* Vehicle 2 */}
       <g filter={`url(#gf-${pid})`} opacity="0.85">
-        <circle r="4.5" fill="#00ff6e">
+        <circle r="4.5" fill="#00e8b4">
           <animateMotion dur="7s" repeatCount="indefinite" begin="4s">
             <mpath href={`#pb-${pid}`} />
           </animateMotion>
@@ -316,17 +316,17 @@ function HeroMap() {
         y="0"
         width="680"
         height="2"
-        fill="#00ff6e"
+        fill="#00e8b4"
         opacity="0.07"
         style={{ animation: "scan 5s linear infinite" }}
       />
       {/* Compass */}
       <g transform="translate(635, 52)">
-        <circle r="22" fill="#091410" stroke="#142b1e" strokeWidth="1" />
+        <circle r="22" fill="#08181e" stroke="#153139" strokeWidth="1" />
         <text
           y="-8"
           textAnchor="middle"
-          fill="#00ff6e"
+          fill="#00e8b4"
           fontSize="9"
           fontFamily="JetBrains Mono, monospace"
         >
@@ -335,7 +335,7 @@ function HeroMap() {
         <text
           y="15"
           textAnchor="middle"
-          fill="#507a58"
+          fill="#86a3ad"
           fontSize="8"
           fontFamily="JetBrains Mono, monospace"
         >
@@ -343,12 +343,12 @@ function HeroMap() {
         </text>
         <polygon
           points="0,-15 3.5,-3 -3.5,-3"
-          fill="#00ff6e"
+          fill="#00e8b4"
           filter={`url(#gf-${pid})`}
         />
-        <polygon points="0,15 3.5,3 -3.5,3" fill="#142b1e" />
+        <polygon points="0,15 3.5,3 -3.5,3" fill="#153139" />
       </g>
-      <circle cx="18" cy="18" r="4" fill="#00ff6e">
+      <circle cx="18" cy="18" r="4" fill="#00e8b4">
         <animate
           attributeName="opacity"
           values="1;0.15;1"
@@ -359,7 +359,7 @@ function HeroMap() {
       <text
         x="28"
         y="22"
-        fill="#00ff6e"
+        fill="#00e8b4"
         fontSize="9.5"
         fontFamily="JetBrains Mono, monospace"
       >
@@ -368,7 +368,7 @@ function HeroMap() {
       <text
         x="16"
         y="408"
-        fill="#507a58"
+        fill="#86a3ad"
         fontSize="8.5"
         fontFamily="JetBrains Mono, monospace"
       >
@@ -386,7 +386,7 @@ function ArcGauge({
   value,
   max,
   label,
-  color = "#00ff6e",
+  color = "#00e8b4",
   warn,
   size = 120,
 }: {
@@ -407,7 +407,7 @@ function ArcGauge({
       <path
         d={arcPath(cx, cy, r, 150, 390)}
         fill="none"
-        stroke="#142b1e"
+        stroke="#153139"
         strokeWidth="7"
         strokeLinecap="round"
       />
@@ -440,7 +440,7 @@ function ArcGauge({
         x={cx}
         y={cy + size * 0.2}
         textAnchor="middle"
-        fill="#507a58"
+        fill="#86a3ad"
         fontSize={size * 0.085}
         fontFamily="JetBrains Mono, monospace"
       >
@@ -543,7 +543,7 @@ function Hero() {
         className="absolute inset-0 opacity-20"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse 80% 50% at 70% 50%, #1a6b3a, transparent)",
+            "radial-gradient(ellipse 80% 50% at 70% 50%, #0a6b5a, transparent)",
         }}
       />
       <div className="relative max-w-7xl mx-auto px-6 py-20 w-full grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
@@ -571,7 +571,7 @@ function Hero() {
             <br />
             <span
               className="text-neon"
-              style={{ textShadow: "0 0 40px #00ff6e55" }}
+              style={{ textShadow: "0 0 40px #00e8b455" }}
             >
               Every
               <br />
@@ -617,7 +617,7 @@ function Hero() {
         >
           <div
             className="relative border border-edge bg-surface overflow-hidden"
-            style={{ boxShadow: "0 0 80px #00ff6e18, 0 0 200px #00ff6e08" }}
+            style={{ boxShadow: "0 0 80px #00e8b418, 0 0 200px #00e8b408" }}
           >
             <div className="flex items-center justify-between px-4 py-2.5 border-b border-edge bg-ground">
               <div className="flex items-center gap-2 font-mono text-xs text-muted">
@@ -673,7 +673,7 @@ function Hero() {
                 </div>
                 <div
                   className="font-display font-extrabold text-3xl text-neon leading-none"
-                  style={{ textShadow: "0 0 20px #00ff6e55" }}
+                  style={{ textShadow: "0 0 20px #00e8b455" }}
                 >
                   99.8%
                 </div>
@@ -835,7 +835,7 @@ function RouteBuilderSection() {
           <div
             className="relative border border-edge bg-surface overflow-hidden"
             style={{
-              boxShadow: phase === "done" ? "0 0 60px #00ff6e18" : "none",
+              boxShadow: phase === "done" ? "0 0 60px #00e8b418" : "none",
               transition: "box-shadow 1s",
             }}
           >
@@ -864,13 +864,13 @@ function RouteBuilderSection() {
                 <>
                   <path
                     d={routePath}
-                    stroke="#0d3d1f"
+                    stroke="#0a3a3a"
                     strokeWidth="3"
                     fill="none"
                   />
                   <path
                     d={routePath}
-                    stroke="#00ff6e"
+                    stroke="#00e8b4"
                     strokeWidth="2"
                     fill="none"
                     filter={`url(#gf-${pid})`}
@@ -900,7 +900,7 @@ function RouteBuilderSection() {
               {/* Moving vehicle on completed route */}
               {phase === "done" && selected.length >= 2 && (
                 <g filter={`url(#gs-${pid})`}>
-                  <circle r="6" fill="#00ff6e">
+                  <circle r="6" fill="#00e8b4">
                     <animateMotion
                       dur="6s"
                       repeatCount="indefinite"
@@ -926,7 +926,7 @@ function RouteBuilderSection() {
                       cy={c.y}
                       r="25"
                       fill="none"
-                      stroke="#00ff6e"
+                      stroke="#00e8b4"
                       strokeWidth="1"
                       opacity="0"
                     >
@@ -950,7 +950,7 @@ function RouteBuilderSection() {
                     x="340"
                     y="210"
                     textAnchor="middle"
-                    fill="#00ff6e"
+                    fill="#00e8b4"
                     fontSize="12"
                     fontFamily="JetBrains Mono, monospace"
                     style={{ animation: "blink-dot 0.8s ease infinite" }}
@@ -1040,7 +1040,7 @@ function RouteBuilderSection() {
               }`}
               style={
                 selected.length >= 2 && phase === "idle"
-                  ? { boxShadow: "0 0 30px #00ff6e22" }
+                  ? { boxShadow: "0 0 30px #00e8b422" }
                   : {}
               }
             >
@@ -1216,13 +1216,13 @@ function LiveCockpitSection() {
               {/* Route path */}
               <path
                 d="M 115 308 C 200 220, 310 205, 378 261"
-                stroke="#0d3d1f"
+                stroke="#0a3a3a"
                 strokeWidth="2.5"
                 fill="none"
               />
               <path
                 d="M 115 308 C 200 220, 310 205, 378 261"
-                stroke="#00ff6e"
+                stroke="#00e8b4"
                 strokeWidth="1.5"
                 fill="none"
                 filter={`url(#gf-${pid})`}
@@ -1233,7 +1233,7 @@ function LiveCockpitSection() {
               {/* Traversed portion */}
               <path
                 d={`M 115 308 C 200 220, 310 205, 378 261`}
-                stroke="#00ff6e"
+                stroke="#00e8b4"
                 strokeWidth="3"
                 fill="none"
                 filter={`url(#gf-${pid})`}
@@ -1251,18 +1251,18 @@ function LiveCockpitSection() {
                   cx={vx}
                   cy={vy}
                   r="8"
-                  fill="#050d08"
-                  stroke="#00ff6e"
+                  fill="#041319"
+                  stroke="#00e8b4"
                   strokeWidth="2.5"
                 />
-                <circle cx={vx} cy={vy} r="3" fill="#00ff6e" />
+                <circle cx={vx} cy={vy} r="3" fill="#00e8b4" />
                 {!locked && (
                   <circle
                     cx={vx}
                     cy={vy}
                     r="8"
                     fill="none"
-                    stroke="#00ff6e"
+                    stroke="#00e8b4"
                     strokeWidth="1"
                   >
                     <animate
@@ -1286,8 +1286,8 @@ function LiveCockpitSection() {
                 y={vy - 18}
                 width="62"
                 height="18"
-                fill="#091410"
-                stroke="#142b1e"
+                fill="#08181e"
+                stroke="#153139"
                 strokeWidth="1"
                 rx="1"
               />
@@ -1295,7 +1295,7 @@ function LiveCockpitSection() {
                 x={vx + 41}
                 y={vy - 6}
                 textAnchor="middle"
-                fill="#00ff6e"
+                fill="#00e8b4"
                 fontSize="9"
                 fontFamily="JetBrains Mono, monospace"
               >
@@ -1307,8 +1307,8 @@ function LiveCockpitSection() {
                 y={vy + 6}
                 width="48"
                 height="16"
-                fill="#091410"
-                stroke="#142b1e"
+                fill="#08181e"
+                stroke="#153139"
                 strokeWidth="1"
                 rx="1"
               />
@@ -1316,7 +1316,7 @@ function LiveCockpitSection() {
                 x={vx + 34}
                 y={vy + 17}
                 textAnchor="middle"
-                fill={rawSpeed > 100 ? "#f59e0b" : "#00ff6e"}
+                fill={rawSpeed > 100 ? "#f59e0b" : "#00e8b4"}
                 fontSize="9"
                 fontFamily="JetBrains Mono, monospace"
               >
@@ -1346,7 +1346,7 @@ function LiveCockpitSection() {
                     value={fuel}
                     max={100}
                     label="fuel %"
-                    color={fuel < 20 ? "#ef4444" : "#00ff6e"}
+                    color={fuel < 20 ? "#ef4444" : "#00e8b4"}
                   />
                 </div>
                 <div className="w-full aspect-square">
@@ -1561,7 +1561,7 @@ function GeofenceSection() {
           <div
             className="relative border border-edge bg-surface overflow-hidden"
             style={{
-              boxShadow: activated ? "0 0 60px #00ff6e14" : "none",
+              boxShadow: activated ? "0 0 60px #00e8b414" : "none",
               transition: "box-shadow 1s",
             }}
           >
@@ -1604,7 +1604,7 @@ function GeofenceSection() {
                 <polyline
                   points={polyStr}
                   fill="none"
-                  stroke="#00ff6e"
+                  stroke="#00e8b4"
                   strokeWidth="1.5"
                   strokeDasharray="5 4"
                   opacity="0.7"
@@ -1618,7 +1618,7 @@ function GeofenceSection() {
                   y1={points[points.length - 1].y}
                   x2={points[0].x}
                   y2={points[0].y}
-                  stroke="#00ff6e"
+                  stroke="#00e8b4"
                   strokeWidth="1.5"
                   strokeDasharray="5 4"
                   opacity="0.4"
@@ -1630,9 +1630,9 @@ function GeofenceSection() {
                 <>
                   <polygon
                     points={polyStr}
-                    fill="#00ff6e"
+                    fill="#00e8b4"
                     fillOpacity="0.08"
-                    stroke="#00ff6e"
+                    stroke="#00e8b4"
                     strokeWidth="2"
                     filter={`url(#gf-${pid})`}
                     opacity="0.9"
@@ -1640,7 +1640,7 @@ function GeofenceSection() {
                   <polygon
                     points={polyStr}
                     fill="none"
-                    stroke="#00ff6e"
+                    stroke="#00e8b4"
                     strokeWidth="1"
                     style={{ animation: "zone-pulse 2.5s ease infinite" }}
                     opacity="0.2"
@@ -1655,21 +1655,21 @@ function GeofenceSection() {
                     cx={p.x}
                     cy={p.y}
                     r="5"
-                    fill="#00ff6e"
+                    fill="#00e8b4"
                     filter={`url(#gf-${pid})`}
                   />
                   <circle
                     cx={p.x}
                     cy={p.y}
                     r="5"
-                    fill="#050d08"
-                    stroke="#00ff6e"
+                    fill="#041319"
+                    stroke="#00e8b4"
                     strokeWidth="2"
                   />
                   <text
                     x={p.x + 8}
                     y={p.y + 4}
-                    fill="#507a58"
+                    fill="#86a3ad"
                     fontSize="9"
                     fontFamily="JetBrains Mono, monospace"
                   >
@@ -1685,18 +1685,18 @@ function GeofenceSection() {
                     cx={vx}
                     cy={vy}
                     r="6"
-                    fill="#050d08"
-                    stroke="#00ff6e"
+                    fill="#041319"
+                    stroke="#00e8b4"
                     strokeWidth="2.5"
                   />
-                  <circle cx={vx} cy={vy} r="2.5" fill="#00ff6e" />
+                  <circle cx={vx} cy={vy} r="2.5" fill="#00e8b4" />
                   {vehicleT < 0.75 && (
                     <circle
                       cx={vx}
                       cy={vy}
                       r="6"
                       fill="none"
-                      stroke="#00ff6e"
+                      stroke="#00e8b4"
                       strokeWidth="1"
                     >
                       <animate
@@ -1741,15 +1741,15 @@ function GeofenceSection() {
                     y={vy - 18}
                     width="62"
                     height="16"
-                    fill="#091410"
-                    stroke="#142b1e"
+                    fill="#08181e"
+                    stroke="#153139"
                     rx="1"
                   />
                   <text
                     x={vx + 41}
                     y={vy - 7}
                     textAnchor="middle"
-                    fill="#00ff6e"
+                    fill="#00e8b4"
                     fontSize="9"
                     fontFamily="JetBrains Mono, monospace"
                   >
@@ -1834,7 +1834,7 @@ function GeofenceSection() {
                     ? "bg-neon text-ground hover:bg-neon-dim"
                     : "bg-edge/30 text-muted/50 cursor-not-allowed"
                 }`}
-                style={ready ? { boxShadow: "0 0 24px #00ff6e22" } : {}}
+                style={ready ? { boxShadow: "0 0 24px #00e8b422" } : {}}
               >
                 {activated ? "⚡ ACTIVE" : "ACTIVATE ZONE"}
               </button>
@@ -1967,7 +1967,7 @@ function ROICalculatorSection() {
                   className="font-display font-extrabold text-neon leading-none"
                   style={{
                     fontSize: "3.5rem",
-                    textShadow: "0 0 30px #00ff6e33",
+                    textShadow: "0 0 30px #00e8b433",
                   }}
                 >
                   {fleet}
@@ -2028,7 +2028,7 @@ function ROICalculatorSection() {
                       className="h-full bg-neon rounded-full transition-all duration-500"
                       style={{
                         width: `${barPct * 100}%`,
-                        boxShadow: "0 0 8px #00ff6e66",
+                        boxShadow: "0 0 8px #00e8b466",
                       }}
                     />
                   </div>
@@ -2059,28 +2059,28 @@ function ROICalculatorSection() {
                   dFuel / fleet
                 ).toLocaleString()} per vehicle`,
                 icon: "⛽",
-                color: "#00ff6e",
+                color: "#00e8b4",
               },
               {
                 label: "Hours Recovered",
                 value: `${dHrs.toLocaleString()} hrs`,
                 sub: `≈ ${(dHrs / fleet).toFixed(1)} hrs per vehicle`,
                 icon: "⏱",
-                color: "#00ff6e",
+                color: "#00e8b4",
               },
               {
                 label: "CO₂ Reduced",
                 value: `${dCo2.toLocaleString()} kg`,
                 sub: `≈ ${(dCo2 / 1000).toFixed(1)} tons this month`,
                 icon: "🌿",
-                color: "#00cc58",
+                color: "#00b58c",
               },
               {
                 label: "Annual ROI",
                 value: `$${dROI.toLocaleString()}`,
                 sub: `~3.8× on TripMonitor cost`,
                 icon: "📈",
-                color: "#00ff6e",
+                color: "#00e8b4",
                 highlight: true,
               },
             ].map(({ label, value, sub, icon, color, highlight }) => (
@@ -2091,7 +2091,7 @@ function ROICalculatorSection() {
                     ? "border-neon/50 bg-neon/5"
                     : "border-edge bg-surface"
                 }`}
-                style={highlight ? { boxShadow: "0 0 30px #00ff6e10" } : {}}
+                style={highlight ? { boxShadow: "0 0 30px #00e8b410" } : {}}
               >
                 <div className="text-2xl mb-3">{icon}</div>
                 <div
@@ -2125,7 +2125,7 @@ function ROICalculatorSection() {
               </div>
               <button
                 className="font-display font-bold tracking-widest text-sm uppercase px-8 py-3.5 bg-neon text-ground hover:bg-neon-dim transition-colors"
-                style={{ boxShadow: "0 0 24px #00ff6e22" }}
+                style={{ boxShadow: "0 0 24px #00e8b422" }}
               >
                 Get Your Full Report →
               </button>
@@ -2159,7 +2159,7 @@ function CTASection() {
           <br />
           <span
             className="text-neon"
-            style={{ textShadow: "0 0 60px #00ff6e40" }}
+            style={{ textShadow: "0 0 60px #00e8b440" }}
           >
             10 Minutes.
           </span>
@@ -2168,7 +2168,7 @@ function CTASection() {
           <Link to={"/signup"}>
             <button
               className="font-display font-bold tracking-widest text-base uppercase px-10 py-4 bg-neon text-ground hover:bg-neon-dim transition-colors"
-              style={{ boxShadow: "0 0 40px #00ff6e30" }}
+              style={{ boxShadow: "0 0 40px #00e8b430" }}
             >
               {t("landing_start_trial")}
             </button>

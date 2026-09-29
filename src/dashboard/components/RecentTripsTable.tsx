@@ -1,4 +1,3 @@
-import React from "react"
 import { useLanguage } from "../../contexts/LanguageContext"
 import type { TranslationKey } from "../../i18n/strings"
 import type { RecentTrip, DashboardVehicleStatus } from "../types"
@@ -9,8 +8,8 @@ interface Props {
 
 const statusColor: Record<DashboardVehicleStatus, string> = {
   moving: "var(--primary)",
-  stopped: "#f59e0b",
-  attention: "#ef4444",
+  stopped: "var(--warning)",
+  attention: "var(--danger)",
 }
 
 const statusLabelKey: Record<DashboardVehicleStatus, TranslationKey> = {

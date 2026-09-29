@@ -17,8 +17,8 @@ import {
 
 const markerColor: Record<string, string> = {
   moving: "var(--primary)",
-  stopped: "#f59e0b",
-  attention: "#ef4444",
+  stopped: "var(--warning)",
+  attention: "var(--danger)",
 }
 
 const searchIcon = (

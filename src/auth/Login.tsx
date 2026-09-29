@@ -60,7 +60,7 @@ export default function Login() {
 
         <div
           className="w-full bg-surface border border-edge px-8 py-10 text-center"
-          style={{ boxShadow: '0 0 60px #00ff6e14, 0 0 160px #00ff6e08' }}
+          style={{ boxShadow: '0 0 60px #00e8b414, 0 0 160px #00e8b408' }}
         >
           <p className="font-body text-muted text-sm mb-7">{t('auth_tagline_login')}</p>
 
@@ -103,7 +103,7 @@ export default function Login() {
                       checked={remember}
                       onChange={e => setRemember(e.target.checked)}
                       tabIndex={expanded ? 0 : -1}
-                      className="w-3.5 h-3.5 accent-[#00ff6e]"
+                      className="w-3.5 h-3.5 accent-[#00e8b4]"
                     />
                     {t('auth_remember')}
                   </label>
@@ -115,7 +115,7 @@ export default function Login() {
               type="submit"
               disabled={loading}
               className="w-full font-display font-bold tracking-widest text-sm uppercase px-7 py-3.5 bg-neon text-ground hover:bg-neon-dim transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-              style={{ boxShadow: '0 0 24px #00ff6e22' }}
+              style={{ boxShadow: '0 0 24px #00e8b422' }}
             >
               {loading ? (
                 <>

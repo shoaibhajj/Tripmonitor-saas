@@ -3,7 +3,7 @@ import type { Vehicle } from '../types'
 export const mockVehicles: Vehicle[] = [
   {
     id: '1', name: 'Toyota Hilux', plate: 'AVX 1122', type: 'pickup', status: 'moving',
-    driver: { name: 'أحمد العتيبي', initials: 'أع', color: '#1a6b3a' },
+    driver: { name: 'أحمد العتيبي', initials: 'أع', color: '#0a6b5a' },
     lastSeen: 'منذ 3 دقائق', location: 'الرياض',
     fuel: 85, speed: 85, battery: 92, signal: 'قوية', distance: 128, lastTrip: 'طريق الملك فهد',
   },
@@ -39,7 +39,7 @@ export const mockVehicles: Vehicle[] = [
   },
   {
     id: '7', name: 'Toyota Hilux', plate: '7788', type: 'pickup', status: 'needs_attention',
-    driver: { name: 'عبدالله سالم', initials: 'عس', color: '#4a7a2a' },
+    driver: { name: 'عبدالله سالم', initials: 'عس', color: '#3b7d75' },
     lastSeen: 'منذ 45 دقيقة', location: 'الرياض',
     fuel: 3, speed: 0, battery: 72, signal: 'متوسطة', distance: 34, lastTrip: 'الطريق السريع',
   },
@@ -63,7 +63,7 @@ export const mockVehicles: Vehicle[] = [
   },
   {
     id: '11', name: 'Toyota Corolla', plate: '7781', type: 'sedan', status: 'moving',
-    driver: { name: 'خالد العتيبي', initials: 'خع', color: '#2a6a4a' },
+    driver: { name: 'خالد العتيبي', initials: 'خع', color: '#2a6a66' },
     lastSeen: 'منذ 9 دقائق', location: 'الرياض',
     fuel: 55, speed: 68, battery: 79, signal: 'قوية', distance: 44, lastTrip: 'طريق الأمير سلطان',
   },

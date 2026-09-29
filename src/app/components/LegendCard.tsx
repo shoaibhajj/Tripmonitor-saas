@@ -41,7 +41,7 @@ export default function LegendCard({ minimized, onMinimize, onClose, dragHandleP
   const { t } = useLanguage()
 
   const markerStatuses = [
-    { color: '#16a34a', label: t('status_moving'), desc: t('legend_moving_desc'), pulse: true },
+    { color: '#00a385', label: t('status_moving'), desc: t('legend_moving_desc'), pulse: true },
     { color: '#9ca3af', label: t('legend_idle_label'), desc: t('legend_idle_desc'), pulse: false },
     { color: '#ef4444', label: t('legend_offline_label'), desc: t('legend_offline_desc'), pulse: false },
   ]
@@ -146,7 +146,7 @@ export default function LegendCard({ minimized, onMinimize, onClose, dragHandleP
           <SectionLabel>{t('legend_speed_guide')}</SectionLabel>
           <div style={{ marginTop: 6, display: 'flex', flexDirection: 'column', gap: 4 }}>
             {[
-              { color: '#16a34a', label: '0–60 km/h', note: t('legend_city') },
+              { color: '#00a385', label: '0–60 km/h', note: t('legend_city') },
               { color: '#f59e0b', label: '60–100 km/h', note: t('legend_highway') },
               { color: '#ef4444', label: '100+ km/h', note: t('legend_highspeed') },
             ].map(s => (

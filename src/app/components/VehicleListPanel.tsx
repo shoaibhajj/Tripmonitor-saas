@@ -13,7 +13,7 @@ interface Props {
 }
 
 const statusConfig: Record<string, { color: string; bg: string }> = {
-  moving:  { color: '#16a34a', bg: 'rgba(22,163,74,0.10)' },
+  moving:  { color: '#00a385', bg: 'rgba(0,163,133,0.10)' },
   idle:    { color: '#9ca3af', bg: 'rgba(156,163,175,0.12)' },
   offline: { color: '#ef4444', bg: 'rgba(239,68,68,0.10)' },
 }

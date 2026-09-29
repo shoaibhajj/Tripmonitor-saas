@@ -54,7 +54,7 @@ const ROUTES = [
 const PINS = [
   {
     id: 'p1',
-    color: '#00ff6e',
+    color: '#00e8b4',
     dur: 17,
     delay: 0,
     // A1 NE: off-screen SW → off-screen NE
@@ -76,7 +76,7 @@ const PINS = [
   },
   {
     id: 'p3',
-    color: '#00cc58',
+    color: '#00b58c',
     dur: 19,
     delay: 7,
     // A2 SW (reverse): off top-right → off bottom-left
@@ -99,7 +99,7 @@ const PINS = [
   },
   {
     id: 'p5',
-    color: '#00ff6e',
+    color: '#00e8b4',
     dur: 20,
     delay: 10,
     // A1 SW → turn at N1 (450,450) → B1 SE
@@ -133,7 +133,7 @@ export default function AuthBackdrop({ className = '' }: { className?: string })
     <div
       className={`absolute inset-0 overflow-hidden ${className}`}
       aria-hidden="true"
-      style={{ background: '#050d08' }}
+      style={{ background: '#041319' }}
     >
       {/* Per-pin CSS keyframes in SVG-coordinate space */}
       {!reduce && (
@@ -184,13 +184,13 @@ export default function AuthBackdrop({ className = '' }: { className?: string })
         </defs>
 
         {/* Ambient depth ellipse */}
-        <ellipse cx="725" cy="450" rx="540" ry="330" fill="#091f12" opacity="0.5" />
+        <ellipse cx="725" cy="450" rx="540" ry="330" fill="#0b2a2b" opacity="0.5" />
 
         {/* ── Road bodies (wide dark stroke) ── */}
         {ROUTES.map(r => (
           <line key={`${r.id}u`}
             x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2}
-            stroke="#0d2518" strokeWidth="16" strokeLinecap="round"
+            stroke="#0c2a2c" strokeWidth="16" strokeLinecap="round"
           />
         ))}
 
@@ -198,21 +198,21 @@ export default function AuthBackdrop({ className = '' }: { className?: string })
         {ROUTES.map(r => (
           <line key={`${r.id}l`}
             x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2}
-            stroke="#00ff6e" strokeWidth="1.8" strokeLinecap="round"
+            stroke="#00e8b4" strokeWidth="1.8" strokeLinecap="round"
             opacity="0.5" filter={`url(#${uid}rg)`}
           />
         ))}
 
         {/* ── Scan sweep ── */}
         <rect x="-200" y="0" width={W + 400} height="2"
-          fill="#00ff6e" opacity="0.05"
+          fill="#00e8b4" opacity="0.05"
           style={{ animation: 'scan 10s linear infinite' }} />
 
         {/* ── Intersection nodes ── */}
         {NODES.map((n, i) => (
           <g key={i} filter={`url(#${uid}ng)`}>
             <circle cx={n.x} cy={n.y} r="16"
-              fill="none" stroke="#00ff6e" strokeWidth="1.2" opacity="0.3">
+              fill="none" stroke="#00e8b4" strokeWidth="1.2" opacity="0.3">
               <animate attributeName="r"
                 values={`${12 + i};${22 + i};${12 + i}`}
                 dur={`${3 + i * 0.5}s`} repeatCount="indefinite" />
@@ -221,8 +221,8 @@ export default function AuthBackdrop({ className = '' }: { className?: string })
                 dur={`${3 + i * 0.5}s`} repeatCount="indefinite" />
             </circle>
             <circle cx={n.x} cy={n.y} r="5.5"
-              fill="#050d08" stroke="#00ff6e" strokeWidth="2" />
-            <circle cx={n.x} cy={n.y} r="2.5" fill="#00ff6e" />
+              fill="#041319" stroke="#00e8b4" strokeWidth="2" />
+            <circle cx={n.x} cy={n.y} r="2.5" fill="#00e8b4" />
           </g>
         ))}
 
@@ -243,7 +243,7 @@ export default function AuthBackdrop({ className = '' }: { className?: string })
             />
             {/* Pin body — dark fill, colored border */}
             <circle cx={0} cy={0} r={13}
-              fill="#050d08" stroke={p.color} strokeWidth="2.5"
+              fill="#041319" stroke={p.color} strokeWidth="2.5"
               filter={`url(#${uid}pg)`}
             />
             {/* Inner white dot */}

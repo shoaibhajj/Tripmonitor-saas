@@ -16,7 +16,7 @@ function FuelIcon({ size = 14, color }: { size?: number; color: string }) {
 
 export default function FuelGauge({ level, showLabel = true, compact = false }: Props) {
   const clamped = Math.min(100, Math.max(0, level))
-  const color = clamped > 50 ? '#16a34a' : clamped > 20 ? '#f59e0b' : '#ef4444'
+  const color = clamped > 50 ? '#00a385' : clamped > 20 ? '#f59e0b' : '#ef4444'
   const isLow = clamped <= 20
   const isMed = clamped > 20 && clamped <= 50
 
@@ -85,7 +85,7 @@ export default function FuelGauge({ level, showLabel = true, compact = false }: 
       <div style={{ display: 'flex', gap: 2, height: 10 }}>
         {Array.from({ length: segments }).map((_, i) => {
           const filled = i < filledSegments
-          const segColor = i < 2 ? '#ef4444' : i < 5 ? '#f59e0b' : '#16a34a'
+          const segColor = i < 2 ? '#ef4444' : i < 5 ? '#f59e0b' : '#00a385'
           return (
             <div
               key={i}
@@ -104,7 +104,7 @@ export default function FuelGauge({ level, showLabel = true, compact = false }: 
       {/* Min/max labels */}
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <span style={{ fontSize: 9, color: '#ef4444', fontFamily: 'var(--font-mono)', opacity: 0.7 }}>E</span>
-        <span style={{ fontSize: 9, color: '#16a34a', fontFamily: 'var(--font-mono)', opacity: 0.7 }}>F</span>
+        <span style={{ fontSize: 9, color: '#00a385', fontFamily: 'var(--font-mono)', opacity: 0.7 }}>F</span>
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ export default function AuthBrandMark() {
         {/* soft ambient glow */}
         <span
           className="absolute -inset-3 rounded-full"
-          style={{ background: 'radial-gradient(circle, #00ff6e2a, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, #00e8b42a, transparent 70%)' }}
         />
         {/* pulsing ring, like a live GPS ping */}
         <span
@@ -18,8 +18,8 @@ export default function AuthBrandMark() {
         <div
           className="relative w-12 h-12 rounded-2xl flex items-center justify-center"
           style={{
-            background: 'linear-gradient(145deg, #00ff6e, #00a850)',
-            boxShadow: '0 0 28px #00ff6e55, inset 0 1px 1px #ffffff40',
+            background: 'linear-gradient(145deg, #00e8b4, #007a62)',
+            boxShadow: '0 0 28px #00e8b455, inset 0 1px 1px #ffffff40',
           }}
         >
           <svg viewBox="0 0 24 24" className="w-6 h-6 fill-ground">

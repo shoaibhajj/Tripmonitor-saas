@@ -14,7 +14,7 @@ interface Props {
 const HEIGHTS: Record<string, number> = { peek: 60, mid: 270, full: 490 }
 
 const statusCfg: Record<string, { color: string }> = {
-  moving: { color: '#16a34a' },
+  moving: { color: '#00a385' },
   idle:   { color: '#9ca3af' },
   offline:{ color: '#ef4444' },
 }
@@ -101,7 +101,7 @@ function SensorsTab({ vehicle }: { vehicle: Vehicle }) {
         const pct = !isNA && sensor.current !== undefined && sensor.max
           ? Math.max(0, Math.min(100, ((sensor.current! - (sensor.min || 0)) / ((sensor.max || 100) - (sensor.min || 0))) * 100))
           : 0
-        const barColor = pct > 80 ? '#ef4444' : pct > 55 ? '#f59e0b' : '#16a34a'
+        const barColor = pct > 80 ? '#ef4444' : pct > 55 ? '#f59e0b' : '#00a385'
 
         return (
           <div key={sensor.label} style={{ background: 'var(--secondary)', borderRadius: 8, padding: '12px 12px' }}>

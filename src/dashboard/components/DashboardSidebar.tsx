@@ -208,7 +208,7 @@ export default function DashboardSidebar({ activeRoute }: Props) {
         height: "100%",
         display: "flex",
         flexDirection: "column",
-        background: "var(--card)",
+        background: "var(--sidebar)",
         borderInlineEnd: "1px solid var(--border)",
         flexShrink: 0,
       }}

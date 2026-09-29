@@ -1,4 +1,3 @@
-import React from "react"
 import { useLanguage } from "../../contexts/LanguageContext"
 import type { RecentAlert, AlertToneKey } from "../types"
 
@@ -8,8 +7,8 @@ interface Props {
 
 const toneColor: Record<AlertToneKey, string> = {
   moving: "var(--primary)",
-  stopped: "#f59e0b",
-  attention: "#ef4444",
+  stopped: "var(--warning)",
+  attention: "var(--danger)",
 }
 
 const toneIcon: Record<AlertToneKey, React.ReactNode> = {

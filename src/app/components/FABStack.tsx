@@ -75,7 +75,7 @@ export default function FABStack({ vehiclesPanelOpen, legendCardOpen, onOpen }: 
                 cursor: 'pointer',
                 color: active ? '#fff' : hovered ? 'var(--foreground)' : 'var(--muted-foreground)',
                 fontSize: 12, fontWeight: 600,
-                boxShadow: active ? '0 2px 14px rgba(22,163,74,0.28)' : '0 2px 10px rgba(0,0,0,0.10)',
+                boxShadow: active ? '0 2px 14px rgba(0,163,133,0.28)' : '0 2px 10px rgba(0,0,0,0.10)',
                 whiteSpace: 'nowrap',
                 transition: 'all 0.18s cubic-bezier(0.4,0,0.2,1)',
                 fontFamily: 'var(--font-sans)', letterSpacing: '-0.01em',

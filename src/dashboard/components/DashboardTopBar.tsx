@@ -83,7 +83,7 @@ export default function DashboardTopBar({
         gap: 12,
         padding: "0 20px",
         borderBottom: "1px solid var(--border)",
-        background: "var(--card)",
+        background: "var(--sidebar)",
         flexShrink: 0,
         flexDirection: isRTL ? "row-reverse" : "row",
       }}
@@ -163,7 +163,7 @@ export default function DashboardTopBar({
                 height: 16,
                 padding: "0 3px",
                 borderRadius: 999,
-                background: "#ef4444",
+                background: "var(--danger)",
                 color: "#fff",
                 fontSize: 10,
                 fontWeight: 700,

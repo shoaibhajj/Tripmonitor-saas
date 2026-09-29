@@ -12,7 +12,7 @@ interface Props {
 }
 
 const statusDot: Record<string, string> = {
-  moving: '#16a34a',
+  moving: '#00a385',
   idle: '#9ca3af',
   offline: '#ef4444',
 }
@@ -179,7 +179,7 @@ export default function TopBar({ vehicles, onVehicleSelect, onOpenFilter, filter
         padding: '0 14px', height: 40,
         pointerEvents: 'all',
       }}>
-        <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#16a34a', boxShadow: '0 0 8px #16a34a', animation: 'livePulse 2s ease-in-out infinite' }} />
+        <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#00a385', boxShadow: '0 0 8px #00a385', animation: 'livePulse 2s ease-in-out infinite' }} />
         <style>{`@keyframes livePulse { 0%,100%{opacity:1} 50%{opacity:0.45} }`}</style>
         <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--foreground)', whiteSpace: 'nowrap' }}>
           {movingCount} <span style={{ fontWeight: 400, color: 'var(--muted-foreground)' }}>{t('n_active')}</span>
@@ -237,7 +237,7 @@ export default function TopBar({ vehicles, onVehicleSelect, onOpenFilter, filter
 
         {/* Avatar */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, background: 'color-mix(in srgb, var(--card) 96%, transparent)', backdropFilter: 'blur(16px)', border: '1px solid var(--border)', borderRadius: 9, padding: '4px 10px 4px 5px', boxShadow: '0 2px 10px rgba(0,0,0,0.09)', cursor: 'pointer' }}>
-          <div style={{ width: 28, height: 28, borderRadius: 6, background: 'linear-gradient(135deg, var(--primary) 0%, #15803d 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 11, fontWeight: 800, flexShrink: 0 }}>AD</div>
+          <div style={{ width: 28, height: 28, borderRadius: 6, background: 'linear-gradient(135deg, var(--primary) 0%, #007a62 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 11, fontWeight: 800, flexShrink: 0 }}>AD</div>
           <div style={{ lineHeight: 1.25 }}>
             <div style={{ fontSize: 12.5, fontWeight: 600, color: 'var(--foreground)', whiteSpace: 'nowrap' }}>Alex D.</div>
             <div style={{ fontSize: 10.5, color: 'var(--muted-foreground)' }}>{t('fleet_admin')}</div>

@@ -79,7 +79,7 @@ function ChipGroup<T extends string>({
 }
 
 const STATUS_COLORS: Record<string, string> = {
-  moving: '#16a34a', idle: '#9ca3af', offline: '#ef4444',
+  moving: '#00a385', idle: '#9ca3af', offline: '#ef4444',
 }
 
 export default function FilterCard({ filter, onFilterChange, minimized, onMinimize, onClose, dragHandleProps, isDragging }: Props) {
@@ -290,7 +290,7 @@ export default function FilterCard({ filter, onFilterChange, minimized, onMinimi
                 background: 'var(--primary)',
                 color: '#fff',
                 fontSize: 11.5, fontWeight: 700, cursor: 'pointer',
-                boxShadow: '0 2px 8px rgba(22,163,74,0.28)',
+                boxShadow: '0 2px 8px rgba(0,163,133,0.28)',
               }}>
               {t('filter_apply')}
             </button>
